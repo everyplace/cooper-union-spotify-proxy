@@ -1,0 +1,14 @@
+{
+  "name": "Cooper-Union-Weather-Proxy",
+  "repository":"https://github.com/everyplace/cooper-union-weather-proxy.git",
+  "version": "0.1.0",
+  "dependencies": {
+    "express": "*",
+    "request":"*",
+    "hjs":"*"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.4.x"
+  }
+}

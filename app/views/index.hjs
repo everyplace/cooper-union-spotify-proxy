@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+
+  </head>
+  <body>
+    <h1>Cooper Union Weather Proxy</h1>
+    <a href="/weather/NY/Manhattan">Example Weather for Manhattan</a>
+</html>
