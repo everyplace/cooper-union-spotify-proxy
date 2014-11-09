@@ -5,6 +5,8 @@
 
   </head>
   <body>
-    <h1>Cooper Union Weather Proxy</h1>
-    <a href="/weather/NY/Manhattan">Example Weather for Manhattan</a>
+    <h1>Cooper Union Instagram Proxy</h1>
+    <a href="/search/tag/cooperunion">Example tag search for cooperunion</a>
+    <a href="/search/location/40.7293/-73.9906">Example location search for lat: 40.7293, long: -73.9906</a>
+  </body>
 </html>
