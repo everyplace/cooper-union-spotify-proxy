@@ -1,9 +1,10 @@
-var request = require('request');
+var request = require('request')
+  , ig = require('instagram-node').instagram();
+
 
 exports.index = function(req, res){
   res.render('index', { title: 'Cooper Union Weather Proxy' });
 };
-
 
 exports.weather = function(req, res){
 
@@ -21,5 +22,16 @@ exports.weather = function(req, res){
     res.end(body);
 
   });
+
+};
+
+exports.instagram_search = function(req, res) {
+
+  ig.use({ client_id: process.env.CLIENT_ID, client_secret: process.env.CLIENT_SECRET});
+  ig.tag_media_recent(req.params.search, function(err, medias, pagination, remaining, limit) {
+
+    res.end(JSON.stringify(medias));
+  });
+
 
 };

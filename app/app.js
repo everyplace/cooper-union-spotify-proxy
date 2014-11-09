@@ -26,7 +26,8 @@ app.configure('development', function(){
 
 //configure routes
 app.get('/', routes.index);
-app.get('/weather/:state/:city', routes.weather);
+// app.get('/weather/:state/:city', routes.weather);
+app.get('/search/instagram/:search', routes.instagram_search);
 
 
 //initiate the app server
