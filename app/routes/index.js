@@ -49,3 +49,16 @@ exports.instagram_location = function(req, res) {
   });
 
 };
+
+
+exports.instagram_user_search = function(req, res) {
+  ig.use({ client_id: process.env.CLIENT_ID, client_secret: process.env.CLIENT_SECRET});
+  ig.user_search(req.params.username, function(err, users, remaining, limit) {
+
+    res.end(JSON.stringify(users));
+  });
+};
+
+
+// ig.user_search('username', [options,] function(err, users, remaining, limit) {});
+
