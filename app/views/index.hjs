@@ -2,7 +2,9 @@
 <html>
   <head>
     <title>{{title}}</title>
-
+    <style>
+      a { display: block; }
+    </style>
   </head>
   <body>
     <h1>Cooper Union Instagram Proxy</h1>
