@@ -61,7 +61,7 @@ exports.instagram_user_search = function(req, res) {
 
 exports.instagram_tag_media_recent = function(req, res) {
   ig.use({ client_id: process.env.CLIENT_ID, client_secret: process.env.CLIENT_SECRET});
-  var count = req.query.count ? req.query.count : 15;
+  var count = (req.query.count && (req.query.count <= 100)) ? req.query.count : 15;
   ig.tag_media_recent(req.params.tag, {count:count}, function(err, medias, pagination, remaining, limit) {
 
     res.end(JSON.stringify(medias));
