@@ -27,9 +27,10 @@ app.configure('development', function(){
 //configure routes
 app.get('/', routes.index);
 // app.get('/weather/:state/:city', routes.weather);
-app.get('/search/tag/:search', routes.json, routes.instagram_search);
+// app.get('/search/tag/:search', routes.json, routes.instagram_search);
 app.get('/search/location/:lat/:long', routes.json, routes.instagram_location);
 app.get('/search/user/:username', routes.json, routes.instagram_user_search);
+app.get('/search/tag/:tag', routes.json, routes.instagram_tag_media_recent);
 
 
 //initiate the app server

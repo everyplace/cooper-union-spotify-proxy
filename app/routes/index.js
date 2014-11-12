@@ -3,7 +3,7 @@ var request = require('request')
 
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Cooper Union Weather Proxy' });
+  res.render('index', { title: 'Cooper Union Instagram Proxy' });
 };
 
 exports.json = function(req, res, next) {
@@ -59,6 +59,13 @@ exports.instagram_user_search = function(req, res) {
   });
 };
 
+exports.instagram_tag_media_recent = function(req, res) {
+  ig.use({ client_id: process.env.CLIENT_ID, client_secret: process.env.CLIENT_SECRET});
+  var count = req.query.count ? req.query.count : 15;
+  ig.tag_media_recent(req.params.tag, {count:count}, function(err, medias, pagination, remaining, limit) {
 
-// ig.user_search('username', [options,] function(err, users, remaining, limit) {});
+    res.end(JSON.stringify(medias));
+  });
+};
 
+// ig.tag_media_recent('tag', [options,] function(err, medias, pagination, remaining, limit) {});
