@@ -59,6 +59,14 @@ exports.instagram_user_search = function(req, res) {
   });
 };
 
+exports.instagram_user_info = function(req, res) {
+  ig.use({ client_id: process.env.CLIENT_ID, client_secret: process.env.CLIENT_SECRET});
+  ig.user(req.params.username, function(err, result, remaining, limit) {
+
+    res.end(JSON.stringify(result));
+  });
+};
+
 exports.instagram_tag_media_recent = function(req, res) {
   ig.use({ client_id: process.env.CLIENT_ID, client_secret: process.env.CLIENT_SECRET});
   var count = (req.query.count && (req.query.count <= 100)) ? req.query.count : 15;

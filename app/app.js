@@ -31,7 +31,7 @@ app.get('/', routes.index);
 app.get('/search/location/:lat/:long', routes.json, routes.instagram_location);
 app.get('/search/user/:username', routes.json, routes.instagram_user_search);
 app.get('/search/tag/:tag', routes.json, routes.instagram_tag_media_recent);
-
+app.get('/user/:username', routes.json, routes.instagram_user_info);
 
 //initiate the app server
 http.createServer(app).listen(app.get('port'), function(){

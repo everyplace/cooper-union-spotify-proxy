@@ -11,7 +11,7 @@
     <a href="/search/tag/cooperunion">Example tag search for <em>cooperunion</em></a>
     <a href="/search/tag/nyc?count=100">Example tag search for <em>nyc</em>, with 100 results</a>
     <a href="/search/user/everyplace">Example user search for <em>everyplace</em></a>
-
+    <a href="/user/168596">Example of using a user id <em>168596</em> to get user info</a>
     <!-- <a href="/search/location/40.7293/-73.9906">Example location search for lat: 40.7293, long: -73.9906</a> -->
   </body>
 </html>
