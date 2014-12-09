@@ -76,4 +76,16 @@ exports.instagram_tag_media_recent = function(req, res) {
   });
 };
 
+exports.instagram_location_venue = function(req, res) {
+  ig.use({ client_id: process.env.CLIENT_ID, client_secret: process.env.CLIENT_SECRET});
+
+  ig.location(req.params.id, function(err, result, remaining, limit) {
+    res.end(JSON.stringify(result));
+  });
+
+};
+
+
+
+
 // ig.tag_media_recent('tag', [options,] function(err, medias, pagination, remaining, limit) {});
