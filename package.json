@@ -1,12 +1,12 @@
 {
-  "name": "Cooper-Union-Instagram-Proxy",
-  "repository":"https://github.com/everyplace/cooper-union-instagram-proxy.git",
+  "name": "Cooper-Union-npr-Proxy",
+  "repository":"https://github.com/everyplace/cooper-union-npr-proxy.git",
   "version": "0.1.0",
   "dependencies": {
     "express": "*",
     "request":"*",
     "hjs":"*",
-    "instagram-node":"*"
+    "npr-news":"*"
   },
   "engines": {
     "node": "0.10.x",
