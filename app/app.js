@@ -32,7 +32,7 @@ app.get('/search/location/:lat/:long', routes.json, routes.instagram_location);
 app.get('/search/user/:username', routes.json, routes.instagram_user_search);
 app.get('/search/tag/:tag', routes.json, routes.instagram_tag_media_recent);
 app.get('/user/:username', routes.json, routes.instagram_user_info);
-app.get('/search/location/venue/:id', routes.json, routes.instagram_location_venue);
+app.get('/search/venue/:id', routes.json, routes.instagram_location_venue);
 
 
 //initiate the app server
