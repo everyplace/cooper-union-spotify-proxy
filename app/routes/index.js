@@ -70,14 +70,16 @@ exports.instagram_user_info = function(req, res) {
 exports.instagram_tag_media_recent = function(req, res) {
   ig.use({ client_id: process.env.CLIENT_ID, client_secret: process.env.CLIENT_SECRET});
   var count = (req.query.count && (req.query.count <= 100)) ? req.query.count : 15;
-  ig.tag_media_recent(req.params.tag, {count:count}, function(err, medias, pagination, remaining, limit) {
+  var max_tag_id = (req.query.max_tag_id) ? req.query.max_tag_id : '';
+  var min_tag_id = (req.query.min_tag_id) ? req.query.min_tag_id : '';
+  ig.tag_media_recent(req.params.tag, {count:count, min_tag_id: min_tag_id, max_tag_id: max_tag_id}, function(err, medias, pagination, remaining, limit) {
 
     res.end(JSON.stringify(medias));
   });
 };
 
 exports.instagram_location_venue = function(req, res) {
-  
+
   console.log("debugging")
   ig.use({ client_id: process.env.CLIENT_ID, client_secret: process.env.CLIENT_SECRET});
 
