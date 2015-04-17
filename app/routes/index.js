@@ -70,11 +70,15 @@ exports.instagram_user_info = function(req, res) {
 exports.instagram_tag_media_recent = function(req, res) {
   ig.use({ client_id: process.env.CLIENT_ID, client_secret: process.env.CLIENT_SECRET});
   var count = (req.query.count && (req.query.count <= 100)) ? req.query.count : 15;
-  var max_tag_id = (req.query.max_tag_id) ? req.query.max_tag_id : '';
-  var min_tag_id = (req.query.min_tag_id) ? req.query.min_tag_id : '';
+  var max_tag_id = (req.query.max_tag_id) ? req.query.max_tag_id : null;
+  var min_tag_id = (req.query.min_tag_id) ? req.query.min_tag_id : null;
   ig.tag_media_recent(req.params.tag, {count:count, min_tag_id: min_tag_id, max_tag_id: max_tag_id}, function(err, medias, pagination, remaining, limit) {
+    if(max_tag_id || min_tag_id) {
+      res.end(JSON.stringify({media:medias,pagination:pagination}));
+    } else {
+      res.end(JSON.stringify(medias));  
+    }
 
-    res.end(JSON.stringify(medias));
   });
 };
 
