@@ -1,12 +1,11 @@
 {
-  "name": "Cooper-Union-Instagram-Proxy",
-  "repository":"https://github.com/everyplace/cooper-union-instagram-proxy.git",
+  "name": "Cooper-Union-Stars-Proxy",
+  "repository":"https://github.com/everyplace/cooper-union-stars-proxy.git",
   "version": "0.1.0",
   "dependencies": {
     "express": "*",
     "request":"*",
-    "hjs":"*",
-    "instagram-node":"*"
+    "hjs":"*"
   },
   "engines": {
     "node": "0.10.x",
