@@ -26,9 +26,10 @@ app.configure('development', function(){
 
 //configure routes
 app.get('/', routes.index);
-app.get('/api/v1/stars', routes.json, routes.stars);
+app.get('/searchSongs/:song', routes.json, routes.searchSongs);
+app.get('/daily/:region/:date', routes.json, routes.daily);
 
 //initiate the app server
 http.createServer(app).listen(app.get('port'), function(){
-  console.log("cooper-union-stars-proxy running on port " + app.get('port'));
+  console.log("cooper-union-spotify-proxy running on port " + app.get('port'));
 });
